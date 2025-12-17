@@ -1,4 +1,4 @@
-module github.com/ndsky1003/sloghandler
+module github.com/ndsky1003/log
 
 go 1.21
 

@@ -1,7 +1,8 @@
-package logger
+package log
 
 import (
 	"log/slog"
+	"sync/atomic"
 )
 
 type SlogHandler interface {
@@ -20,4 +21,17 @@ func SetDefault(opts ...*Option) SlogHandler {
 	sl, handler := New(opts...)
 	slog.SetDefault(sl)
 	return handler
+}
+
+var customLogger atomic.Pointer[slog.Logger]
+
+func Logger() *slog.Logger {
+	if l := customLogger.Load(); l != nil {
+		return l
+	}
+	return slog.Default()
+}
+
+func SetLogger(l *slog.Logger) {
+	customLogger.Store(l)
 }
