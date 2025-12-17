@@ -4,7 +4,7 @@
 ## install
 
 ```bash
-go get -u github.com/ndsky1003/sloghandler
+go get -u github.com/ndsky1003/log
 ```
 
 
