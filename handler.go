@@ -15,7 +15,7 @@ import (
 	"sync/atomic"
 	"time"
 
-	"github.com/ndsky1003/buffer/v2"
+	"github.com/ndsky1003/buffer/v3"
 )
 
 // 1. 接口守卫
